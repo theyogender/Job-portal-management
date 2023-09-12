@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <center>
+        <h1 style="font-size:400%;">Saved Data</h1>
+       
+    </center>
+</head>
+<hr style=" border-color:grey;  height: 0px;  border-style: none; border-top-style: dotted;  border-width: 5px; width: 65%;" >
+<body  style="font-size:150%;  background-color:rgb(212, 251, 238);">
+
+   
+
+   <center> 
+       <div style="font-size:150%;  background-color:rgb(222, 210, 250);">      
+        <center>J<h1>Job Aspirants</h1></center>
+        
+        <Table border="3"  style="font-size:100%;  background-color:rgb(255, 165, 127);">
+            <thead>
+                <tr>
+
+                    <th> Name</th>
+                    <th>Email</th>
+                    <th>Number</th>
+                    <th>Job_Name</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <%  Job.forEach( item=>
+                { %> <tr>
+                                <td><%= item.Name %></td>
+                                <td><%= item.email%></td>
+                               <td> <%= item.Number %></td>
+                                <td><%= item.Job_Name %></td>
+                                <td><%= item.Id %></td>
+                     </tr>
+                  <%
+                }
+                )  
+                        
+            %>
+                
+            </tbody>
+            
+        </Table>
+    
+       <br>
+       <hr style=" border-color:grey;  height: 0px;  border-style: none; border-top-style: dotted;  border-width: 5px; width: 65%;" >
+          
+        <center><h1>Employers</h1></center>
+        <Table border="3"  style="font-size:100%;  background-color:rgb(255, 127, 236);">
+            <thead>
+                <tr>
+                    <th> Name</th>
+                    <th>Email</th>
+                    <th>Number</th>
+                    <th>Job_Name</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <%  Employ.forEach( item=>
+                { %> <tr>
+                                <td><%= item.Name %></td>
+                                <td><%= item.email%></td>
+                               <td> <%= item.Number %></td>
+                                <td><%= item.Job_Name %></td>
+                                <td><%= item.Id %></td>
+                     </tr>
+                  <%
+                }
+                )  
+                        
+            %>
+
+            </tbody>
+            
+        </Table>
+    
+       </div>
+   </center>
+   
+    
+</body>
+
+</html>
+
+
+                          
+
