@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>Job Portal</h1>
+        
+    </header>
+    <section class="jobs">
+        
+        <center><header><h1>Jobseekers looing for the jobs</h1></header></center>
+        <%  Job.forEach( item=>
+        { %> <div class="job">
+            <h3> (<%= item.Serial_Number%> ) Job :<%= item.Job_Name%></h3>
+            <p>Company: <%= item.Company %></p>
+            <p>email: <%= item.email %></p>
+            <p>Number: <%= item.Number %></p>
+            <p>Location: New York, USA</p>
+            <!-- <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+        </div>
+          <%
+        }
+        )  
+        %>
+       
+    </section>
+    <section class="employers">
+        
+        <center><header><h1>Jobs You are Giving</h1></header></center>
+        <%  data.forEach( item=>
+        { %> <div class="job">
+            <h3> Job :<%= item.Job_Name%></h3>
+            <p>Company: <%= item.Company %></p>
+            <p>email: <%= item.email %></p>
+            <p>Number: <%= item.Number %></p>
+            <p>Location: New York, USA</p>
+            <!-- <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+        </div>
+          <%
+        }
+        )  
+        %>
+        
+    </section>
+
+    <center><p>Want to give Job ! </p></center>
+    <center><p>click below to Enter Your Job <details></details> </p></center>
+
+    <center><p><a href="employer.html">Apply</a></p></center>
+        
+
+
+</body>
+</html>
