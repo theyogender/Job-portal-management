@@ -96,7 +96,14 @@ app.post('/employer', async (req, resp) => {
     const model2 = require(`${dir}/Employer1_database.js`);
     const userdata = await require(`${dir}/login_database.js`);
     const check = await userdata.findOne({ 'Number': req.body.Registered_Number })
-    const userId = check.user_Id;
+    if(check==null)
+    {
+
+    resp.send(`<canter><h1 style='font-size:150%;'>Plz enter right Registered Number</h1></center>`)
+
+    }
+    else{
+        const userId = check.user_Id;
     const user1 = await model2.findOne({ 'Job_Name': req.body.Job_Name })
     if (user1 == null) {
         const count = await model2.count();
@@ -114,8 +121,8 @@ app.post('/employer', async (req, resp) => {
 
         resp.render('employer', { check, data, Job });
     }
-    else {
-        const Employ = await model2.find();
+      else {
+         const Employ = await model2.find();
 
         const model3 = require(`${dir}/Jobseeker_database.js`);
         const Job = await model3.find();
@@ -124,8 +131,10 @@ app.post('/employer', async (req, resp) => {
         const data = await model2.find({ 'user_Id': userId })
 
 
-        resp.render('employer', { check, data, Job });
+         resp.render('employer', { check, data, Job });
+      }
     }
+    
 }
 
 )
@@ -137,6 +146,14 @@ app.post('/aspirant', async (req, resp) => {
     const model2 = require(`${dir}/Jobseeker_database.js`);
     const userdata = await require(`${dir}/login_database.js`);
     const check = await userdata.findOne({ 'Number': req.body.Registered_Number })
+    if(check==null)
+    {
+
+    resp.send(`<canter><h1 style='font-size:150%;'>Plz enter right Registered Number</h1></center>`)
+
+    }
+    else
+    {
     const userId = check.user_Id;
     const user1 = await model2.findOne({ 'Job_Name': req.body.Job_Name })
     if (user1 == null) {
@@ -152,15 +169,16 @@ app.post('/aspirant', async (req, resp) => {
         const data = await model2.find({ 'user_Id': userId })
 
         resp.render('aspirant', { check, data, Job });
-    }
-    else {
+      }
+      else {
         const model3 = require(`${dir}/Employer1_database.js`);
         const Job = await model3.find();
 
 
         const data = await model2.find({ 'user_Id': userId })
-
+              
         resp.render('aspirant', { check, data, Job });
+      }
     }
 
 }
