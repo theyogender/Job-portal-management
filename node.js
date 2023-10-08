@@ -108,11 +108,8 @@ app.post('/employer', async (req, resp) => {
     if (user1 == null) {
         const count = await model2.count();
 
-        const fd = await new model2({ user_Id: userId, Serial_Number: count + 1, Company: req.body.Company, email: req.body.email, Number: req.body.Number, Job_Name: req.body.Job_Name })
+        const fd = await new model2({ user_Id: userId, Serial_Number: count + 1, Company: req.body.Company, email: req.body.email, Number: req.body.Number, Job_Name: req.body.Job_Name, Id: req.body.ID })
         const data1 = await fd.save();
-        // console.log(req.body);
-        
-        
         const Employ = await model2.find();
 
         const model3 = require(`${dir}/Jobseeker_database.js`);
@@ -123,7 +120,6 @@ app.post('/employer', async (req, resp) => {
 
 
         resp.render('employer', { check, data, Job });
-        
     }
       else {
          const Employ = await model2.find();
