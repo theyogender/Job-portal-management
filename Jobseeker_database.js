@@ -1,4 +1,4 @@
- const mongo=require('mongoose');
+const mongo=require('mongoose');
 mongo.connect('mongodb://127.0.0.1:27017/db')
 
 const Schema=new mongo.Schema({
@@ -8,7 +8,8 @@ const Schema=new mongo.Schema({
     email:String,
     Number:Number,
     Job_Name:String,
-    Registered_Number:Number
+    Registered_Number:Number,
+    myarray:Array
 })
  module.exports=mongo.model('Jobseeker',Schema);
 

@@ -1,0 +1,32 @@
+<head>
+    <center><h1 style="font-size: 600%;">Welcome! Admin</h1></center>
+</head>
+<body>
+    <div class="container">
+   
+	<center>
+		<form action="/Adelete" method="post" style="font-size:200%;">
+			
+			
+			<label>Registered Number :</label>
+			<input type="tel" placeholder="+91 xxxxxxxxxx" patterm="[0-9]{10} " name="Registered_Number" required>
+
+		
+   
+       
+        <form id="registration-form" action="/signup" method="post">
+            <div class="form-group">
+                <label for="user-type">Select User Type:</label>
+                <select id="user-type" name='Designation'>
+                    <option name="Designation" value="Employer">Employer</option>
+                    <option name="Designation" value="Aspirant">Job Aspirant</option>
+                    
+                </select>
+            </div>
+          <br>
+            <button type="submit">delete</button>
+        </form>
+    </div>  </center>
+    <script src="script.js"></script>
+
+</body>

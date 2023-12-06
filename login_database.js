@@ -7,6 +7,7 @@ const Schema=new mongose.Schema({
     Name:String,
     Number:Number,
     Password:String,
+    email:String
     
     
 })
